@@ -1,12 +1,3 @@
-/*
-
-	DHT22 sensor reading test
-
-	Jun 2007: Ricardo Timmermann, implemetation
-
-
-*/
-
 #include <stdio.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
@@ -32,9 +23,7 @@ void DHT_task(void *pvParameter)
 
 		printf( "Hum %.1f\n", getHumidity() );
 		printf( "Tmp %.1f\n", getTemperature() );
-		
-		// -- wait at least 2 sec before reading again ------------
-		// The interval of whole process must be beyond 2 seconds !! 
+		 
 		vTaskDelay( 3000 / portTICK_PERIOD_MS );
 	}
 }
